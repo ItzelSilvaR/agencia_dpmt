@@ -1,0 +1,30 @@
+extends ./layout/index
+
+block slider
+    .slider
+        h1 Rio de Janeiro
+        em aventura
+
+block contenido
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre nosotros
+        .row.mb-5
+            .col-md-6       
+                p.text-justify Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis maiores fugit beatae quidem non dolorem, molestias expedita dicta quas rem eaque iusto nostrum an
+                p.text-justify Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quos debitis maiores earum. Dolores, similique aperiam est veniam exercitationem soluta, quae esse sequi reiciendi
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", alt="Imagen sobre nosotros" class="img-fluid")
+        
+        include ./layout/bloque_viajes.pug 
+    .descuento
+        .container
+            .row
+                .col-md-6
+                    .contenido  
+                        h3 5% de descuento 
+                        p.titulo Viaje a Canáda
+                        p.fecha 22-Mar-2021- 28-Mar-2021
+                        p.precio $200,000 MX
+    .container
+        h2.mt-5.text-center Testimonios
+        include layout/bloque_testimonios.pug
