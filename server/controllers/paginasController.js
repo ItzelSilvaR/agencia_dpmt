@@ -1,6 +1,8 @@
 import {Viaje} from '../models/Viaje.js';
 import {Testimonio} from '../models/Testimonios.js';
 
+app.set('views', path.join(__dirname, 'views'));
+
 const paginaInicio= async (req, res)=>{ //req lo que envias, res lo que express te envía
     //Consultar tres viajes del modelo viaje
     const promiseDB= [];
