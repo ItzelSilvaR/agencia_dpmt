@@ -8,6 +8,8 @@ dotenv.config({path:"variables.env"});
 //const express = require('express'); //common JS
 const app= express();
 
+app.set('views', path.join(__dirname, 'views'));
+
 /**
  * Conectar a la base de datos.
  * Base de datos mysql
