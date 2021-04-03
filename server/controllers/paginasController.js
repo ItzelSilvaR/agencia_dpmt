@@ -15,7 +15,7 @@ const paginaInicio= async (req, res)=>{ //req lo que envias, res lo que express 
     try {
         const resultado = await Promise.all(promiseDB); //Arrancar ambas consultas al mismo tiempo
 
-        res.render('inicio',{
+        res.render('../server/views/inicio',{
             pagina: 'Inicio',
             clase: 'home',
             viajes: resultado[0],
@@ -27,7 +27,7 @@ const paginaInicio= async (req, res)=>{ //req lo que envias, res lo que express 
 };
 
 const paginaNosotros= (req, res)=>{
-    res.render('nosotros', { //Pasarle variables, se pasan en un objeto
+    res.render('../server/views/nosotros', { //Pasarle variables, se pasan en un objeto
         pagina: 'Nosotros'
     });
 };
@@ -35,7 +35,7 @@ const paginaNosotros= (req, res)=>{
 const paginaTestimonios= async (req, res)=>{
     try {
         const testimonios= await Testimonio.findAll();
-        res.render('testimonios', { 
+        res.render('../server/views/testimonios', { 
         pagina: 'Testimonios',
         testimonios
     });   
@@ -47,7 +47,7 @@ const paginaTestimonios= async (req, res)=>{
 const paginaViajes=  async (req, res)=>{
     const viajes= await Viaje.findAll();
     //console.log(viajes);
-    res.render('viajes', { 
+    res.render('../server/views/viajes', { 
         pagina: 'Próximos viajes',
         viajes
     });
@@ -58,7 +58,7 @@ const paginaDetalleViaje= async (req, res)=>{
     const {slug}= req.params;
     try {
         const resultado= await Viaje.findOne({where: {slug}});
-        res.render('viaje',{
+        res.render('../server/views/viaje',{
             pagina: 'Información viaje',
             viaje: resultado
         })
